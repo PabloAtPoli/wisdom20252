@@ -1,6 +1,14 @@
 {
-  "root": ".",                 // or "public" if your files live there
+  "root": ".",
   "clean_urls": true,
   "https_only": true,
-  "routes": { "/**": "index.html" }   // SPA fallback; remove if not needed
+  "headers": {
+    "/**": { "Cache-Control": "public, max-age=600" },
+    "/**/*.js":  { "Cache-Control": "public, max-age=31536000, immutable" },
+    "/**/*.css": { "Cache-Control": "public, max-age=31536000, immutable" },
+    "/**/*.png": { "Cache-Control": "public, max-age=31536000, immutable" },
+    "/**/*.jpg": { "Cache-Control": "public, max-age=31536000, immutable" },
+    "/**/*.svg": { "Cache-Control": "public, max-age=31536000, immutable" },
+    "/**/*.ico": { "Cache-Control": "public, max-age=31536000, immutable" }
+  }
 }
