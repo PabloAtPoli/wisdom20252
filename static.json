@@ -1,4 +1,6 @@
 {
-  "root": "public",
-  "clean_urls": true
+  "root": ".",                 // or "public" if your files live there
+  "clean_urls": true,
+  "https_only": true,
+  "routes": { "/**": "index.html" }   // SPA fallback; remove if not needed
 }
